@@ -1,0 +1,196 @@
+.mainHomePage {
+  background-color: #aaaaaa24;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+/* Hero Section */
+.mainHomePage .herosection {
+  width: 95%;
+  background-image: url('https://templatemo.com/templates/templatemo_579_cyborg_gaming/assets/images/banner-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  padding: 50px;
+}
+
+.mainHomePage .herosection h3 {
+  font-size: 18px;
+  color: white;
+  padding: 10px 0;
+}
+
+.mainHomePage .herosection h1 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 700;
+  padding: 10px 0;
+}
+
+.mainHomePage .herosection button {
+  padding: 7px 20px;
+  font-size: 12px;
+  color: white;
+  background-color: #e75e8d;
+  border-radius: 25px;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+/* Popular Games */
+.popularGames {
+  background-color: #1f2122;
+  margin: 50px 0;
+  border-radius: 20px;
+  padding: 25px;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.popularGames button {
+  position: absolute;
+  bottom: -20px;
+  right: 50%;
+  transform: translate(50%, 0%);
+  padding: 10px 30px;
+  font-size: 14px;
+  color: white;
+  background-color: #e75e8d;
+  border-radius: 25px;
+  border: none;
+}
+
+.popularGames button:hover {
+  padding: 7px 20px;
+  font-size: 12px;
+}
+
+.popularGames h1 {
+  font-size: 30px;
+  color: white;
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+
+.popularGames h1 span {
+  color: #e75e8d;
+}
+
+.popularGames .GameCard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.popularGames .GameCard .gCard {
+  background-color: #aaaaaa24;
+  border-radius: 20px;
+  padding: 20px 10px;
+}
+
+.popularGames .GameCard .gCard img {
+  border-radius: 20px;
+  width: 100%;
+}
+
+.popularGames .gCard .firstRow,
+.popularGames .gCard .secondRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: white;
+}
+
+.popularGames .gCard .firstRow {
+  padding-top: 10px;
+}
+
+.popularGames .gCard .name {
+  font-weight: 700;
+}
+
+.popularGames .gCard .star {
+  color: yellow;
+  font-size: 12px;
+}
+
+.popularGames .gCard .download {
+  color: #e75e8d;
+  font-size: 12px;
+}
+
+.popularGames .gCard .title {
+  color: #aaa;
+}
+
+/* Library Games */
+.libraryGames {
+  background-color: #1f2122;
+  margin: 50px 0;
+  border-radius: 20px;
+  padding: 25px;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.libraryGames .gameCard {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 30px 0;
+  border-bottom: 1px solid #444;
+}
+
+.libraryGames .button1 {
+  position: absolute;
+  right: 130px;
+  padding: 10px 30px;
+  font-size: 14px;
+  color: white;
+  background-color: #e75e8d;
+  border-radius: 25px;
+  border: none;
+}
+
+.libraryGames .button2 {
+  position: absolute;
+  bottom: -20px;
+  right: 50%;
+  transform: translate(50%, 0%);
+  padding: 10px 30px;
+  font-size: 14px;
+  color: white;
+  background-color: #e75e8d;
+  border-radius: 25px;
+  border: none;
+}
+
+.libraryGames img {
+  width: 90px;
+  border-radius: 25px;
+}
+
+.libraryGames h4 {
+  font-size: 16px;
+  color: white;
+  font-weight: 700;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.libraryGames p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.libraryGames h1 {
+  font-size: 30px;
+  color: white;
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+
+.libraryGames h1 span {
+  color: #e75e8d;
+}

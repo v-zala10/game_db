@@ -1,0 +1,139 @@
+.main_browse_page {
+  background-color: #27292a;
+  padding: 50px;
+  border-radius: 20px;
+
+  .heroSection {
+    justify-content: space-between;
+    display: flex;
+  }
+
+  .games {
+    border-radius: 20px;
+    background-color: #1f2122;
+    padding: 30px;
+    width: 65%;
+
+  }
+
+  .carosule {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
+
+    img {
+      width: 100%;
+      border-radius: 20px;
+    }
+  }
+
+  & .firstRow,
+  .secondRow {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: white;
+    /* padding-top: 10px; */
+  }
+
+  & .firstRow {
+    padding-top: 10px;
+  }
+
+  & .name {
+    font-weight: 700;
+
+  }
+
+  & .star {
+    color: yellow;
+    font-size: 12px;
+    margin-bottom: 4px;
+    margin-right: 3px;
+  }
+
+  & .download {
+    color: #e75e8d;
+    font-size: 12px;
+    margin-bottom: 4px;
+    margin-right: 3px;
+  }
+
+  & .title {
+    color: #aaa;
+  }
+
+}
+
+.topDownloads {
+  width: 30%;
+  background-color: #1f2122;
+  padding: 20px;
+  border-radius: 20px;
+
+  h1 {
+    font-size: 25px;
+  }
+
+  & .gCard {
+    /* background-color: #aaaaaa24; */
+    border-radius: 20px;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+
+    & img {
+      border-radius: 20px;
+      width: 70px;
+      height: 70px;
+    }
+
+    & .firstRow,
+    .secondRow {
+      /* display: flex; */
+      /* justify-content: space-between; */
+      font-size: 12px;
+      color: white;
+      /* padding-top: 10px; */
+    }
+
+    & .firstRow {
+      padding-top: 10px;
+    }
+
+    & .name {
+      font-weight: 700;
+
+    }
+
+    & .star {
+      color: yellow;
+      font-size: 12px;
+      margin-bottom: 4px;
+      margin-right: 3px;
+    }
+
+    & .download {
+      color: #e75e8d;
+      font-size: 12px;
+      margin-bottom: 4px;
+      margin-right: 3px;
+    }
+
+  }
+  & .title {
+    font-size: 12px;
+    color: #aaa;
+  }
+.downloadsicon{
+  background-color: #27292a;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-top: 30px;
+}
+}
