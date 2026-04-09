@@ -4,6 +4,9 @@ function StreamPage() {
   return (
     <div>
       stream Page
+
+
+      database create
     </div>
   )
 }
