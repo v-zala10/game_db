@@ -1,92 +1,165 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './BrowsePage.css'
 import data from '../GameData.json'
-import { useState } from 'react'
 import { FaDownload, FaStar } from 'react-icons/fa'
-
-
-
+import { TbDeviceGamepad2 } from "react-icons/tb";
+import { CgProfile } from "react-icons/cg";
+import { RiVideoOnAiLine } from "react-icons/ri";
 function BrowsePage() {
+
   const [carasoulData, setCarasoulData] = useState([])
   const [downloadsData, setSownloadsData] = useState([])
 
+  const scrollRef = useRef(null)
+
+  const scrollLeft = () => {
+    scrollRef.current.scrollBy({
+      left: -300,
+      behavior: 'smooth'
+    })
+  }
+
+  const scrollRight = () => {
+    scrollRef.current.scrollBy({
+      left: 300,
+      behavior: 'smooth'
+    })
+  }
+
   useEffect(() => {
-    let filterData = data.filter((e) => e.is_feature_game)
-    setCarasoulData(filterData)
-    // let sortDowland = 
 
-    // console.log(sortDowland)
-    // let dDaya = data.filter((e)=>e.downloads)
 
-    // let arr = []
-    // for (let i in data) {
-    //   arr.push(data[i].downloads)
-    // }
+    let featured = [...data]
+      .sort((a, b) => b.rating - a.rating)
+      .slice(0, 6)
 
-    data.sort((a, b) => b.downloads - a.downloads)
-    let topDow = data.slice(0, 3)
-    console.log("---", topDow)
-    setSownloadsData(topDow)
+    setCarasoulData(featured)
+
+
+    let topDownloads = [...data]
+      .map((game) => {
+        let value = game.downloads
+
+        if (typeof value === "string") {
+          value = parseFloat(value.replace("M+", ""))
+        }
+
+        return { ...game, downloadsValue: value }
+      })
+      .sort((a, b) => b.downloadsValue - a.downloadsValue)
+      .slice(0, 3)
+
+    setSownloadsData(topDownloads)
+
   }, [])
-
 
   return (
     <div className='main_browse_page'>
+
       <div className="heroSection">
+
+        {/* LEFT SIDE */}
         <div className="games">
-          <h1>Featured <span>Games</span> </h1>
-          <div className="carosule">
-            {
-              carasoulData.map((e) => {
-                return (
-                  <>
-                    <div className="carasoul_card">
-                      <img src={e.thumbnail} alt="image1" />
-                      <div className="firstRow">
-                        <div className="name">{e.gameName}</div>
-                        <div className="ratings"><FaStar className='star' />{e.ratings}</div>
-                      </div>
-                      <div className="secondRow">
-                        <div className="title">{e.title}</div>
-                        <div className="downloads"><FaDownload className='download' />{e.downloads}M</div>
-                      </div>
+          <h1>Featured <span>Games</span></h1>
+
+          <div className="carouselWrapper">
+            <button className="scrollBtn left" onClick={scrollLeft}>‹</button>
+
+            <div className="carosule" ref={scrollRef}>
+              {carasoulData.map((e) => (
+                <div className="carasoul_card" key={e.id}>
+                  <img src={e.image} alt={e.title} />
+
+                  <div className="firstRow">
+                    <div className="name">{e.title}</div>
+                    <div className="ratings">
+                      <FaStar className='star' /> {e.rating}
                     </div>
-                  </>
-                )
-              })
-            }
+                  </div>
 
+                  <div className="secondRow">
+                    <div className="title">{e.genre}</div>
+                    <div className="downloads">
+                      <FaDownload className='download' />
+                      {typeof e.downloads === "number"
+                        ? `${e.downloads}M`
+                        : e.downloads}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
 
+            <button className="scrollBtn right" onClick={scrollRight}>›</button>
           </div>
         </div>
+
+        {/* RIGHT SIDE */}
         <div className="topDownloads">
           <h1>Top Downloaded</h1>
-          {
-            downloadsData.map((e) => {
-              return (
-                <div className='gCard' key={e.id}>
-                  <div className="img">
-                    <img src={e.image} alt="image" />
-                  </div>
-                  <div className="rows">
 
-                    <div className="firstRow">
-                      <div className="name">{e.gameName}</div>
-                    </div>
-                    <div className="title">{e.title}</div>
-                    <div className="secondRow" style={{ gap: "20px" }}>
-                      <div className="ratings"><FaStar className='star' />{e.ratings}</div>
-                      <div className="downloads"><FaDownload className='download' />{e.downloads}M</div>
-                    </div>
+          {downloadsData.map((e) => (
+            <div className='gCard' key={e.id}>
 
+              <img src={e.image} alt={e.title} />
 
-                  </div>
-                  <div className="downloadsicon"><FaDownload className='download' /></div>
+              <div className="rows">
+                <div className="firstRow">
+                  <div className="name">{e.title}</div>
                 </div>
-              )
-            })
-          }
+
+                <div className="title">{e.genre}</div>
+
+                <div className="secondRow">
+                  <div className="ratings">
+                    <FaStar className='star' /> {e.rating}
+                  </div>
+                  <div className="downloads">
+                    <FaDownload className='download' />
+                    {typeof e.downloads === "number"
+                      ? `${e.downloads}M`
+                      : e.downloads}
+                  </div>
+                </div>
+              </div>
+
+              <div className="downloadsicon">
+                <FaDownload />
+              </div>
+
+            </div>
+          ))}
         </div>
+
+      </div>
+
+
+      <div className="liveStreamSection">
+        <h1>How To Start Your <span>Live Stream</span></h1>
+
+        <div className="streamCards">
+
+          <div className="streamCard">
+            <div className="icon"><CgProfile /></div>
+            <h3>Go To Your Profile</h3>
+            <p>Cyborg Gaming is free HTML CSS website template provided by TemplateMo. This is Bootstrap v5.2.0 layout.</p>
+          </div>
+
+          <div className="streamCard">
+            <div className="icon"><TbDeviceGamepad2 /></div>
+            <h3>Live Stream Button</h3>
+            <p>If you wish to support us, you can make a small contribution via PayPal to info [at] templatemo.com</p>
+          </div>
+
+          <div className="streamCard">
+            <div className="icon"><RiVideoOnAiLine /></div>
+            <h3>You Are Live</h3>
+            <p>You are not allowed to redistribute this template's downloadable ZIP file on any other template collection website.</p>
+          </div>
+
+        </div>
+
+        <button className="goLiveBtn">Go To Profile</button>
       </div>
     </div>
   )

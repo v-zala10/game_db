@@ -33,15 +33,15 @@ function Library() {
             </div>
             <div className="date">
               <h4>Date Added</h4>
-              <p>{game.date}  </p>
+              <p>{game.dateAdded}  </p>
             </div>
             <div className="playingTime">
               <h4>Hours Played</h4>
-              <p>{game.playingTime}</p>
+              <p>{game.hoursPlayed}</p>
             </div>
             <div className="download">
               <h4>currently</h4>
-              <p>download</p>
+              <p>{game.installed ? "Installed" : "Not Installed"}</p>
             </div>
             <div className="downloadButton">
               <button className='button1'>Download</button>

@@ -3,77 +3,77 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
+}
 
-  .active-link-class {
-    color: palevioletred;
-    text-decoration: none;
-  }
+/* LINKS */
+.active-link-class {
+  color: palevioletred;
+  text-decoration: none;
+}
 
-  .inactive-link-class {
-    color: #ccc;
-    text-decoration: none;
-  }
+.inactive-link-class {
+  color: #ccc;
+  text-decoration: none;
+}
 
-  & .logo {
-    & img {
-      width: 150px;
-    }
-  }
+/* LOGO */
+.navbarContainer .logo img {
+  width: 150px;
+}
 
-  & .search {
-    font-size: 12px;
+/* SEARCH */
+.navbarContainer .search {
+  font-size: 12px;
+  position: relative;
+}
 
-    & input {
-      background-color: #aaaaaa24;
-      color: #ccc;
-      border: none;
-      border-radius: 25px;
-      outline: none;
-      padding: 5px 10px 8px 30px;
-      position: relative;
-    }
+.navbarContainer .search input {
+  background-color: #aaaaaa24;
+  color: #ccc;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  padding: 8px 10px 8px 35px;
+}
 
-    & input:focus {
-      outline: 1px solid white;
+.navbarContainer .search input:focus {
+  outline: 1px solid white;
+}
 
-    }
+.navbarContainer .search input::placeholder {
+  color: #aaa;
+  font-size: 12px;
+}
 
-    & input::placeholder {
-      color: #aaa;
-      font-size: 12px;
-      display: flex;
-    }
+.navbarContainer .search .searchIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+}
 
-    & .searchIcon {
-      position: absolute;
-      color: #aaa;
-      margin: 10px;
-    }
-  }
+/* NAV LINKS */
+.navbarContainer .navlink {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 12px;
+}
 
-  & .navlink {
-    color: #aaa;
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-    font-size: 12px;
-    gap: 30px;
+/* PROFILE */
+.navbarContainer .navlink .profile {
+  background-color: #aaaaaa24;
+  padding: 5px 10px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  color: #aaa;
+}
 
-
-    & .profile {
-      background-color: #aaaaaa24;
-      padding: 5px 10px;
-      border-radius: 25px;
-      color: #aaa;
-
-      & img {
-        border-radius: 50%;
-        width: 25px;
-        height: 25px;
-        margin-left: 10px;
-      }
-
-      
-    }
-  }
+.navbarContainer .navlink .profile img {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
 }
