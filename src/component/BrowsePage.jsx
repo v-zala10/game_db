@@ -5,6 +5,9 @@ import { FaDownload, FaStar } from 'react-icons/fa'
 import { TbDeviceGamepad2 } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
 import { RiVideoOnAiLine } from "react-icons/ri";
+import streamdata from './StreamData.json'
+
+
 function BrowsePage() {
 
   const [carasoulData, setCarasoulData] = useState([])
@@ -47,20 +50,24 @@ function BrowsePage() {
         return { ...game, downloadsValue: value }
       })
       .sort((a, b) => b.downloadsValue - a.downloadsValue)
-      .slice(0, 3)
+      .slice(0, 5)
 
     setSownloadsData(topDownloads)
 
   }, [])
 
+
+
+  let streamers = streamdata.streams.filter((v) => v.isLive == true)
+
   return (
     <div className='main_browse_page'>
-
+      {/* hero section */}
       <div className="heroSection">
 
         {/* LEFT SIDE */}
         <div className="games">
-          <h1>Featured <span>Games</span></h1>
+          <h1><u>Featured</u> <span>Games</span></h1>
 
           <div className="carouselWrapper">
             <button className="scrollBtn left" onClick={scrollLeft}>‹</button>
@@ -96,7 +103,7 @@ function BrowsePage() {
 
         {/* RIGHT SIDE */}
         <div className="topDownloads">
-          <h1>Top Downloaded</h1>
+          <h1><u>Top</u> <span>Downloads</span></h1>
 
           {downloadsData.map((e) => (
             <div className='gCard' key={e.id}>
@@ -110,7 +117,7 @@ function BrowsePage() {
 
                 <div className="title">{e.genre}</div>
 
-                <div className="secondRow">
+                <div className="secondRow1">
                   <div className="ratings">
                     <FaStar className='star' /> {e.rating}
                   </div>
@@ -161,6 +168,37 @@ function BrowsePage() {
 
         <button className="goLiveBtn">Go To Profile</button>
       </div>
+      {/*  Most Popular Live Stream*/}
+
+      <div className="stream">
+
+        <h1>Most Popular <span>Live Streams</span></h1>
+
+        <div className="streamCards">
+          {streamers.map((v) => (
+            <div className="streamCard" key={v.id}>
+              <img src={v.avatar}alt={v.userName} />
+              <div className="streamInfo">
+                <h3>{v.userName}</h3> 
+              </div>
+
+            </div>
+          ))}
+        </div>
+
+      </div>
+      
+
+
+
+
+      
+
+
+
+
+      
+
     </div>
   )
 }

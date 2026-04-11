@@ -21,6 +21,8 @@
 .games h1 {
   color: white;
   margin-bottom: 20px;
+  font-size: 45px;
+  margin-top: 10px;
 }
 
 .games h1 span {
@@ -67,6 +69,7 @@
 
 .carasoul_card img {
   width: 100%;
+  height: 335px;
   border-radius: 15px;
 }
 
@@ -74,9 +77,11 @@
 .firstRow,
 .secondRow {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   color: white;
   font-size: 12px;
+  gap: 30px;
 }
 
 .firstRow {
@@ -85,6 +90,7 @@
 
 .name {
   font-weight: bold;
+  font-size: 17px;
 }
 
 .title {
@@ -99,6 +105,14 @@
 .download {
   color: #e75e8d;
   margin-right: 3px;
+}
+
+.secondRow1 {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+  gap: 30px;
 }
 
 /* BUTTONS */
@@ -121,6 +135,9 @@
 
 .scrollBtn.right {
   right: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .scrollBtn:hover {
@@ -136,9 +153,16 @@
 }
 
 .topDownloads h1 {
-  color: white;
+   color: white;
   margin-bottom: 20px;
+  font-size: 45px;
+  margin-top: 10px;
 }
+
+.topDownloads h1 span {
+  color: #e75e8d;
+}
+
 
 /* DOWNLOAD CARD */
 .gCard {
@@ -161,17 +185,18 @@
 
 .downloadsicon {
   background-color: #27292a;
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   cursor: pointer;
+  color: #e75e8d;
 }
 
 .downloadsicon:hover {
-  background-color: #e75e8d;
+  background-color: #aaa;
 }
 
 /* RESPONSIVE */
@@ -219,9 +244,7 @@
   transition: 0.3s ease;
 }
 
-.streamCard:hover {
-  transform: translateY(-5px);
-}
+
 
 /* ICON */
 .streamCard .icon {
@@ -254,7 +277,6 @@
 
 .goLiveBtn:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(231, 94, 141, 0.4);
 }
 
 /* RESPONSIVE */

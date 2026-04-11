@@ -16,7 +16,7 @@ function HomePage() {
       </div>
       <PopularGames />    
       <Library />
-    </div>
+    </div >
   )
 }
 

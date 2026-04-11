@@ -2,27 +2,9 @@ import React, { useState } from 'react'
 import data from '../GameData.json'
 import { FaStar } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa6";
-import './Hero.css'
+
 
 function PopularGames() {
-
-  // console.log(data.length)
-  // let d = []
-  // for (let i = 0; i < data.length; i++) {
-  //   d.push(data[i].downloads)
-  // }
-
-  // let a;
-  // let b;
-  // let sorted = d.sort((a, b) => a - b)
-  // let Sorted = sorted.reverse()
-  // Sorted.pop()
-  // Sorted.pop()
-  // Sorted.pop()
-  // Sorted.pop()
-  // console.log("---->", Sorted)
-
-
   let filterData = data.filter((e) => e.isPopular == true)
 
   return (
