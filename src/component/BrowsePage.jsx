@@ -58,7 +58,7 @@ function BrowsePage() {
 
 
 
-  let streamers = streamdata.streams.filter((v) => v.isLive == true)
+  let streamers = streamdata.filter((v) => v.isLive == true)
 
   return (
     <div className='main_browse_page'>
@@ -170,16 +170,18 @@ function BrowsePage() {
       </div>
       {/*  Most Popular Live Stream*/}
 
-      <div className="stream">
+      <div className="streamerwrapper">
 
         <h1>Most Popular <span>Live Streams</span></h1>
 
-        <div className="streamCards">
+        <div className="streamerCards">
           {streamers.map((v) => (
-            <div className="streamCard" key={v.id}>
+            <div className="live" key={v.id}>
               <img src={v.avatar}alt={v.userName} />
               <div className="streamInfo">
                 <h3>{v.userName}</h3> 
+                <p>{v.game}</p>
+                {/* <img src={v.thumbnail} alt={v.game} /> */}
               </div>
 
             </div>
