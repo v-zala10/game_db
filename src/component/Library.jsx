@@ -40,7 +40,7 @@ function Library() {
               <p>{game.hoursPlayed}</p>
             </div>
             <div className="download">
-              <h4>currently</h4>
+              <h4>Currently</h4>
               <p>{game.installed ? "Installed" : "Not Installed"}</p>
             </div>
             <div className="downloadButton">

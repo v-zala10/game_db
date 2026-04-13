@@ -6,6 +6,9 @@ import { TbDeviceGamepad2 } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
 import { RiVideoOnAiLine } from "react-icons/ri";
 import streamdata from './StreamData.json'
+import { FaEye } from "react-icons/fa";
+import { CiStreamOn } from "react-icons/ci";
+import { FaCheckCircle } from "react-icons/fa";
 
 
 function BrowsePage() {
@@ -58,7 +61,10 @@ function BrowsePage() {
 
 
 
-  let streamers = streamdata.filter((v) => v.isLive == true)
+  let streamers = streamdata.filter((v) => v.viewers > 15000)
+  if (streamers.length > 8) {
+    streamers = streamers.slice(0, 3)
+  }
 
   return (
     <div className='main_browse_page'>
@@ -171,37 +177,39 @@ function BrowsePage() {
       {/*  Most Popular Live Stream*/}
 
       <div className="streamerwrapper">
-
-        <h1>Most Popular <span>Live Streams</span></h1>
+        <h1><u>Most Popular</u> <span>Live Streams</span></h1>
 
         <div className="streamerCards">
           {streamers.map((v) => (
             <div className="live" key={v.id}>
-              <img src={v.avatar}alt={v.userName} />
+
+              {/* Thumbnail Wrapper */}
+              <div className="thumbnailWrapper">
+                <img src={v.thumbnail} alt={v.name} />
+
+                {/* 🔥 Hover Overlay */}
+                <div className="overlay">
+                  <span className="viewers"><FaEye />{v.viewers} </span>
+                  <span className="liveTag">LIVE</span>
+                  <span className='streamTime'><CiStreamOn />{v.streamTime}</span>
+                </div>
+              </div>
+
+              {/* Info Section */}
               <div className="streamInfo">
-                <h3>{v.userName}</h3> 
-                <p>{v.game}</p>
-                {/* <img src={v.thumbnail} alt={v.game} /> */}
+                <img src={v.avatar} alt={v.name} />
+
+                <div>
+                  <h3><FaCheckCircle />{v.name}</h3>
+                  <p>{v.title}</p>
+                </div>
               </div>
 
             </div>
           ))}
         </div>
-
-      </div>
-      
-
-
-
-
-      
-
-
-
-
-      
-
-    </div>
+      </div>  
+       </div>
   )
 }
 
