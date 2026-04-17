@@ -307,7 +307,7 @@
   .streamerCards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* like your image */
+   
     gap: 20px;
   }
 
@@ -324,7 +324,7 @@
 
   }
 
-  /* Thumbnail Wrapper */
+ 
   .thumbnailWrapper {
     position: relative;
   }
@@ -336,7 +336,7 @@
     object-fit: cover;
   }
 
-  /* 🔥 Overlay (Hidden by default) */
+  
   .overlay {
     position: absolute;
     top: 0;
@@ -352,12 +352,12 @@
     padding: 10px;
   }
 
-  /* Show on hover */
+ 
   .thumbnailWrapper:hover .overlay {
     opacity: 1;
   }
 
-  /* Viewers (top left) */
+  
   .viewers {
     background: #ff4d6d;
     padding: 5px 10px;
@@ -376,10 +376,11 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    margin-top: 211px;
 
   }
 
-  /* LIVE badge (top right) */
+ 
   .liveTag {
     background: #ff4d6d;
     padding: 5px 10px;
@@ -389,7 +390,7 @@
     margin-right: 20px;
   }
 
-  /* Info Section */
+  
   .streamInfo {
     display: flex;
     align-items: center;

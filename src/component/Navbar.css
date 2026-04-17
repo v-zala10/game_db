@@ -4,9 +4,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
+
 }
 
-/* LINKS */
+
 .active-link-class {
   color: palevioletred;
   text-decoration: none;
@@ -17,14 +18,14 @@
   text-decoration: none;
 }
 
-/* LOGO */
+
 .navbarContainer .logo img {
-  width: 150px;
+  width: 200px;
 }
 
-/* SEARCH */
+
 .navbarContainer .search {
-  font-size: 12px;
+  font-size: 16px;
   position: relative;
 }
 
@@ -35,6 +36,7 @@
   border-radius: 25px;
   outline: none;
   padding: 8px 10px 8px 35px;
+    font-size: 16px;
 }
 
 .navbarContainer .search input:focus {
@@ -43,7 +45,7 @@
 
 .navbarContainer .search input::placeholder {
   color: #aaa;
-  font-size: 12px;
+   font-size: 16px;
 }
 
 .navbarContainer .search .searchIcon {
@@ -54,15 +56,15 @@
   color: #aaa;
 }
 
-/* NAV LINKS */
+
 .navbarContainer .navlink {
   display: flex;
   align-items: center;
   gap: 30px;
-  font-size: 12px;
+  font-size: 16px;
 }
 
-/* PROFILE */
+
 .navbarContainer .navlink .profile {
   background-color: #aaaaaa24;
   padding: 5px 10px;
@@ -74,8 +76,7 @@
 
 .navbarContainer .navlink .profile img {
   border-radius: 50%;
-  width: 25px;
-  height: 25px;
+  
   margin-left: 10px;
 }
 .nav {

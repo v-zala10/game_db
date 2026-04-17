@@ -68,7 +68,7 @@ function BrowsePage() {
 
   return (
     <div className='main_browse_page'>
-      {/* hero section */}
+     
       <div className="heroSection">
 
         {/* LEFT SIDE */}
@@ -174,7 +174,7 @@ function BrowsePage() {
 
         <button className="goLiveBtn">Go To Profile</button>
       </div>
-      {/*  Most Popular Live Stream*/}
+      
 
       <div className="streamerwrapper">
         <h1><u>Most Popular</u> <span>Live Streams</span></h1>
@@ -183,19 +183,19 @@ function BrowsePage() {
           {streamers.map((v) => (
             <div className="live" key={v.id}>
 
-              {/* Thumbnail Wrapper */}
+              
               <div className="thumbnailWrapper">
                 <img src={v.thumbnail} alt={v.name} />
 
-                {/* 🔥 Hover Overlay */}
+                
                 <div className="overlay">
                   <span className="viewers"><FaEye />{v.viewers} </span>
-                  <span className="liveTag">LIVE</span>
-                  <span className='streamTime'><CiStreamOn />{v.streamTime}</span>
+                   <span className='streamTime'><CiStreamOn />{v.streamTime}</span>
+                   <span className="liveTag">LIVE</span>
                 </div>
               </div>
 
-              {/* Info Section */}
+             
               <div className="streamInfo">
                 <img src={v.avatar} alt={v.name} />
 
