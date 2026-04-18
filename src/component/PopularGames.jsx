@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import data from '../GameData.json'
+import data from './GameData.json'
 import { FaStar } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa6";
 

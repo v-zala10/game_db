@@ -3,7 +3,9 @@ import React from 'react'
 function ProfilePage() {
   return (
     <div>
-      Profile Page
+      <h1>profile</h1>
+      
+
     </div>
   )
 }

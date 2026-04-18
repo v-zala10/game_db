@@ -10,9 +10,9 @@ function HomePage() {
   return (
     <div className='mainHomePage'>
       <div className="herosection">
-        <h3>Welcome To Cyborg</h3>
-        <h1>Browse Our Popular <br></br> Games Here</h1>
-        <button><a href="/browse">Browse now</a></button>
+        <h2>Welcome To Cyborg</h2>
+        <h1> <span style={{ color: '#e75e8d'}}>Browse</span> Our Popular <br></br> Games Here</h1>
+        <button className='btn'>Browse now</button>
       </div>
       <PopularGames />    
       <Library />

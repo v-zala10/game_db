@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import data from '../GameData.json'
+import data from './GameData.json'
 
 
 function Library() {

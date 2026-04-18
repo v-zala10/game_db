@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './BrowsePage.css'
-import data from '../GameData.json'
+import data from './GameData.json'
 import { FaDownload, FaStar } from 'react-icons/fa'
 import { TbDeviceGamepad2 } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
