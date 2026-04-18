@@ -1,11 +1,23 @@
-import React, { useState } from 'react'
-import data from './GameData.json'
+import React, { useState, useEffect } from 'react'
 import { FaStar } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa6";
-
+import axios from 'axios'
 
 function PopularGames() {
+  const [data, setData] = useState([])
+
   let filterData = data.filter((e) => e.isPopular == true)
+  const api_url = "http://localhost/v/game.php"
+  
+  
+  const fetchDatta = async () => {
+    const apidata = await axios.get(api_url)
+    setData(apidata.data)
+  }
+
+  useEffect(() => {
+    fetchDatta()
+  }, [])
 
   return (
 

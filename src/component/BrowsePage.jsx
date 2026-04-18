@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './BrowsePage.css'
-import data from './GameData.json'
 import { FaDownload, FaStar } from 'react-icons/fa'
 import { TbDeviceGamepad2 } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
@@ -9,13 +8,14 @@ import streamdata from './StreamData.json'
 import { FaEye } from "react-icons/fa";
 import { CiStreamOn } from "react-icons/ci";
 import { FaCheckCircle } from "react-icons/fa";
-
+import axios from 'axios';
 
 function BrowsePage() {
 
   const [carasoulData, setCarasoulData] = useState([])
   const [downloadsData, setSownloadsData] = useState([])
-
+  const [data, setData] = useState([])
+  const [isDataChanged, setIsDataChanged] = useState(false)
   const scrollRef = useRef(null)
 
   const scrollLeft = () => {
@@ -32,13 +32,27 @@ function BrowsePage() {
     })
   }
 
+  const fetchData = async () => {
+    try {
+      const api_url = "http://localhost/v/game.php"
+      const apidata = await axios.get(api_url)
+      if (apidata.data) {
+        setData(apidata.data)
+        setIsDataChanged(true)
+      }
+    } catch (error) {
+      console.log("Error fetching data:", error)
+    }
+
+  }
+
+
+
   useEffect(() => {
-
-
+    fetchData()
     let featured = [...data]
       .sort((a, b) => b.rating - a.rating)
       .slice(0, 6)
-
     setCarasoulData(featured)
 
 
@@ -49,15 +63,12 @@ function BrowsePage() {
         if (typeof value === "string") {
           value = parseFloat(value.replace("M+", ""))
         }
-
         return { ...game, downloadsValue: value }
       })
       .sort((a, b) => b.downloadsValue - a.downloadsValue)
       .slice(0, 5)
-
     setSownloadsData(topDownloads)
-
-  }, [])
+  }, [isDataChanged])
 
 
 
@@ -68,7 +79,7 @@ function BrowsePage() {
 
   return (
     <div className='main_browse_page'>
-     
+
       <div className="heroSection">
 
         {/* LEFT SIDE */}
@@ -174,7 +185,7 @@ function BrowsePage() {
 
         <button className="goLiveBtn">Go To Profile</button>
       </div>
-      
+
 
       <div className="streamerwrapper">
         <h1><u>Most Popular</u> <span>Live Streams</span></h1>
@@ -183,19 +194,19 @@ function BrowsePage() {
           {streamers.map((v) => (
             <div className="live" key={v.id}>
 
-              
+
               <div className="thumbnailWrapper">
                 <img src={v.thumbnail} alt={v.name} />
 
-                
+
                 <div className="overlay">
                   <span className="viewers"><FaEye />{v.viewers} </span>
-                   <span className='streamTime'><CiStreamOn />{v.streamTime}</span>
-                   <span className="liveTag">LIVE</span>
+                  <span className='streamTime'><CiStreamOn />{v.streamTime}</span>
+                  <span className="liveTag">LIVE</span>
                 </div>
               </div>
 
-             
+
               <div className="streamInfo">
                 <img src={v.avatar} alt={v.name} />
 
@@ -208,8 +219,8 @@ function BrowsePage() {
             </div>
           ))}
         </div>
-      </div>  
-       </div>
+      </div>
+    </div>
   )
 }
 
